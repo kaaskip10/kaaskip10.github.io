@@ -1,9 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@keyframes moveBackground {
+    0% {
+        background-position: 0px 0px;
+    }
+    100% {
+        background-position: 99% 99%;
+    }
+  }
+
+  @keyframes changingGradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+  }
+
+* {
+    scroll-behavior: smooth;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 body {
+    background-color: #000;
+    font-family: Poppins, sans-serif;
+}
+
+.main {
+    text-align: center;
+    margin: 1px;
+    padding: 3px;
+}
+
+.item {
+    margin: 14px 15px;
+    height: 50vh;
+    padding: 14px 15px;
+}
+
+.item h2 {
+    padding-top: 5%;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid #e7e7e7;
+    background-color: #f3f3f3;
+}
+
+nav img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+nav li a {
+    display: block;
+    color: #666;
+    padding: 14px 16px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav li a:hover {
+    color: #333;
+}
+
+#home {
+    animation: changingGradient 15s ease infinite;
+    background: linear-gradient(90deg,  #5ba79b, #60cedf)
+}
+#about {
+    animation: changingGradient 15s ease infinite;
+    background: linear-gradient(90deg,  #ef5353, #ee8835)
+}
+#contact {
+    animation: changingGradient 15s ease infinite;
+    background:linear-gradient(90deg, #ab5cff, #397eff);
     height: 100vh;
 }
 
-main {
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+.item button {
+    font-weight: 700;
+    font-family: Montserrat, sans-serif;
+    padding: 14px 15px;
+    margin: 4% 6%;
+    border: 2px solid #fff;
+    border-radius: 7px;
+    background-color: #000;
+    color: #fff;
+    transition-duration: 1000ms;
+}
+
+.item button:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.item button:active{
+    font-size: 1.05rem;
+    background-color:#234c9a;
+    color: #fff;
+    border: 1px solid #fff;
+}
+
+/* WARNING: the following code is too dangerous for society. */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 400%;
+    height: 400%;
+    background: url('assets/star.svg') repeat;
+    background-size: 128px;
+    opacity: 25%;
+    animation: moveBackground 45s linear infinite;
+    z-index: -1;
+  }
+
+/* chatgpt is a savior for making things responsive */
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+    }
+
+    nav li a {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .main {
+        padding: 10px;
+    }
+
+    .item {
+        height: auto;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .item h2 {
+        font-size: 1.5rem;
+    }
+
+    .item button {
+        padding: 10px 12px;
+        margin: 3% 5%;
+        font-size: 1rem;
+    }
+
+    nav img {
+        height: 30px;
+    }
 }
