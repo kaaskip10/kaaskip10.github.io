@@ -1,25 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
 @keyframes moveBackground {
-    0% {
-        background-position: 0px 0px;
-    }
-    100% {
-        background-position: 99% 99%;
-    }
-  }
+    0% { background-position: 0px 0px; }
+    100% { background-position: 99% 99%; }
+}
 
-  @keyframes changingGradient {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-  }
+@keyframes changingGradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
 * {
     scroll-behavior: smooth;
@@ -54,18 +44,22 @@ nav ul {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    border: 1px solid #e7e7e7;
-    background-color: #f3f3f3;
+    border: 4px solid #e7e7e7;
+    border-radius: 25px;
+    /* background-color: #f3f3f3; */
+    background-color: transparent;
 }
 
 nav img {
     height: 40px;
     margin-right: 10px;
+    border-radius: 100%;
 }
 
 nav li a {
     display: block;
-    color: #666;
+    color: #ffffff;
+    font-weight: bolder;
     padding: 14px 16px;
     text-decoration: none;
     transition: color 0.3s ease;
@@ -77,16 +71,39 @@ nav li a:hover {
 
 #home {
     animation: changingGradient 15s ease infinite;
-    background: linear-gradient(90deg,  #5ba79b, #60cedf)
+    background: linear-gradient(90deg, #5ba79b, #60cedf);
 }
+
 #about {
     animation: changingGradient 15s ease infinite;
-    background: linear-gradient(90deg,  #ef5353, #ee8835)
+    background: linear-gradient(90deg, #ef5353, #ee8835);
 }
+
+#projects {
+    animation: changingGradient 15s ease infinite;
+    background: linear-gradient(90deg, #c946d7, #d7a880);
+}
+
 #contact {
     animation: changingGradient 15s ease infinite;
-    background:linear-gradient(90deg, #ab5cff, #397eff);
+    background: linear-gradient(90deg, #ab5cff, #397eff);
     height: 100vh;
+}
+
+.header-container {
+    align-items: baseline;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#home h2 {
+    margin: 0;
+}
+
+#home p {
+    margin-top: 10px;
+    text-align: center;
 }
 
 .item button {
@@ -106,14 +123,13 @@ nav li a:hover {
     color: #000;
 }
 
-.item button:active{
+.item button:active {
     font-size: 1.05rem;
-    background-color:#234c9a;
+    background-color: #234c9a;
     color: #fff;
     border: 1px solid #fff;
 }
 
-/* WARNING: the following code is too dangerous for society. */
 body::before {
     content: '';
     position: fixed;
@@ -126,9 +142,8 @@ body::before {
     opacity: 25%;
     animation: moveBackground 45s linear infinite;
     z-index: -1;
-  }
+}
 
-/* chatgpt is a savior for making things responsive */
 @media (max-width: 768px) {
     .nav-links {
         flex-direction: column;
@@ -163,4 +178,16 @@ body::before {
     nav img {
         height: 30px;
     }
+}
+
+.header-container a{
+    color: inherit;
+}
+
+i {
+    font-size: 1.25rem;
+    color: inherit;
+    float: left;
+    padding: 0px 14px;
+    display: inline;
 }
